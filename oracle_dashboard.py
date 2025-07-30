@@ -16,6 +16,8 @@ import io
 import concurrent.futures
 import logging
 import time as time_module
+import oracledb
+
 
 # --- Page Configuration (Best practice: call this first) ---
 st.set_page_config(
@@ -67,7 +69,7 @@ def create_db_engine():
     port = st.secrets["database"]["port"]
     service = st.secrets["database"]["service"]
 
-    connection_string = f"oracle+cx_oracle://{username}:{password}@{host}:{port}/?service_name={service}"
+    connection_string = f"oracle+oracledb://{username}:{password}@{host}:{port}/?service_name={service}"
     
     try:
         engine = create_engine(
