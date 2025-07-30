@@ -5,3 +5,4 @@ sqlalchemy
 cx_Oracle
 plotly
 pytz
+oracledb
